@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class GewinnModel {
     private int gesamtPunkte;
     private int spielerZahl;
@@ -18,5 +20,10 @@ public class GewinnModel {
 
     public int getRundenErgebnis() {
         return rundenErgebnis;
+    }
+
+    public void berechneComputerZahl() {
+        Random random = new Random();
+        this.computerZahl = random.nextInt(9) + 1;
     }
 }
