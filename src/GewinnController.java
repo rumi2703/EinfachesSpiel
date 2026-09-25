@@ -18,15 +18,26 @@ public class GewinnController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.getDeineZahlFeld()) {
-            int spielerZahl = Integer.parseInt(view.getDeineZahlFeld().getText());
+            try {
+                int spielerZahl = Integer.parseInt(view.getDeineZahlFeld().getText());
 
-            if (spielerZahl >= 1 && spielerZahl <= 9) {
-                model.berechneComputerZahl();
-                model.berechneRunde(spielerZahl);
-                view.getComputerFeld().setText(Integer.toString(model.getComputerZahl()));
-                view.getRundenErgebnisFeld().setText(Integer.toString(model.getRundenErgebnis()));
-                view.getGesamtPunkteFeld().setText(Integer.toString(model.getGesamtPunkte()));
+                if (spielerZahl >= 1 && spielerZahl <= 9) {
+                    model.berechneComputerZahl();
+                    model.berechneRunde(spielerZahl);
+                    view.getComputerFeld().setText(Integer.toString(model.getComputerZahl()));
+                    view.getRundenErgebnisFeld().setText(Integer.toString(model.getRundenErgebnis()));
+                    view.getGesamtPunkteFeld().setText(Integer.toString(model.getGesamtPunkte()));
+                } else {
+                    view.getDeineZahlFeld().setText("");
+                }
+            } catch (NumberFormatException ex) {
+                view.getDeineZahlFeld().setText("");
             }
+        }
+        if (e.getSource() == view.getNochEinmalButton()) {
+            view.getRundenErgebnisFeld().setText("");
+            view.getDeineZahlFeld().setText("");
+            view.getComputerFeld().setText("");
         }
     }
 }
