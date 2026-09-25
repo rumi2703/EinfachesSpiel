@@ -1,3 +1,4 @@
+import java.awt.*;
 import java.awt.event.*;
 
 public class GewinnController implements ActionListener {
@@ -27,6 +28,19 @@ public class GewinnController implements ActionListener {
                     view.getComputerFeld().setText(Integer.toString(model.getComputerZahl()));
                     view.getRundenErgebnisFeld().setText(Integer.toString(model.getRundenErgebnis()));
                     view.getGesamtPunkteFeld().setText(Integer.toString(model.getGesamtPunkte()));
+
+                    if (model.getRundenErgebnis() > 0 || model.hatGewonnen()) {
+                        view.getRundenErgebnisLabel().setBackground(Color.GREEN);
+                        view.getGesamtPunkteLabel().setBackground(Color.GREEN);
+                    }
+                    else if (model.getRundenErgebnis() < 0 || model.hatVerloren()) {
+                        view.getRundenErgebnisLabel().setBackground(Color.RED);
+                        view.getGesamtPunkteLabel().setBackground(Color.RED);
+                    }
+                    else {
+                        view.getRundenErgebnisLabel().setBackground(Color.WHITE);
+                        view.getGesamtPunkteLabel().setBackground(Color.WHITE);
+                    }
                     view.getDeineZahlFeld().setEnabled(false);
                     view.getNochEinmalButton().setEnabled(true);
                 } else {

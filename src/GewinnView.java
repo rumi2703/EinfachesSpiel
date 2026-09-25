@@ -34,6 +34,7 @@ public class GewinnView extends JFrame {
         rundenErgebnisFeld.setHorizontalAlignment(JTextField.CENTER);
         rundenErgebnisFeld.setBackground(Color.WHITE);
         rundenErgebnisFeld.setMaximumSize(new Dimension(400, 15));
+        rundenErgebnisLabel.setOpaque(true);
 
         JLabel deineZahlLabel = new JLabel("Deine Zahl:");
         deineZahlLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -51,6 +52,7 @@ public class GewinnView extends JFrame {
 
         gesamtPunkteLabel = new JLabel("Gesamtpunkte:");
         gesamtPunkteLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
+        gesamtPunkteLabel.setOpaque(true);
 
         gesamtPunkteFeld = new JTextField("Gesamtpunkte: 30");
         gesamtPunkteFeld.setEditable(false);
@@ -103,5 +105,13 @@ public class GewinnView extends JFrame {
 
     public JButton getNochEinmalButton() {
         return nochEinmalButton;
+    }
+
+    public JLabel getGesamtPunkteLabel() {
+        return gesamtPunkteLabel;
+    }
+
+    public JLabel getRundenErgebnisLabel() {
+        return rundenErgebnisLabel;
     }
 }
