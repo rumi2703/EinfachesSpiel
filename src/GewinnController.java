@@ -27,6 +27,8 @@ public class GewinnController implements ActionListener {
                     view.getComputerFeld().setText(Integer.toString(model.getComputerZahl()));
                     view.getRundenErgebnisFeld().setText(Integer.toString(model.getRundenErgebnis()));
                     view.getGesamtPunkteFeld().setText(Integer.toString(model.getGesamtPunkte()));
+                    view.getDeineZahlFeld().setEnabled(false);
+                    view.getNochEinmalButton().setEnabled(true);
                 } else {
                     view.getDeineZahlFeld().setText("");
                 }
@@ -38,6 +40,8 @@ public class GewinnController implements ActionListener {
             view.getRundenErgebnisFeld().setText("");
             view.getDeineZahlFeld().setText("");
             view.getComputerFeld().setText("");
+            view.getDeineZahlFeld().setEnabled(true);
+            view.getNochEinmalButton().setEnabled(false);
         }
     }
 }

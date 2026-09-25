@@ -76,6 +76,7 @@ public class GewinnView extends JFrame {
 
         JPanel buttonPanel = new JPanel();
         nochEinmalButton = new JButton("Noch einmal!");
+        nochEinmalButton.setEnabled(false);
         buttonPanel.add(nochEinmalButton);
 
         hauptPanel.add(spielPanel, BorderLayout.CENTER);
