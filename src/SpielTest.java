@@ -1,5 +1,8 @@
+/*
+ * Startet das Spiel.
+ * Erstelllt Model, View und Controller.
+ */
 public class SpielTest {
-
     public static void main(String[] args) {
         GewinnModel model = new GewinnModel();
         GewinnView view = new GewinnView();

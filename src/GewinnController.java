@@ -1,6 +1,10 @@
 import java.awt.*;
 import java.awt.event.*;
 
+/*
+ * Verbindet die View mit dem Model.
+ * Reagiert auf Eingaben und aktualisiert die Anzeige.
+ */
 public class GewinnController implements ActionListener {
 
     private GewinnModel model;
@@ -16,6 +20,11 @@ public class GewinnController implements ActionListener {
         view.getNochEinmalButton().addActionListener(this);
     }
 
+    /*
+     * wird aufgerufen, wenn der Benutzer etwas eingibt oder auf den Button klickt.
+     * Es verarbeitet die Zahl, startet eine Runde udn aktualisiert das, was anzegeit wird.
+     * Wenn auf "Noch einmal" geklickt wird, wird eine neue Runde vorbereitet.
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == view.getDeineZahlFeld()) {

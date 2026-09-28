@@ -1,6 +1,9 @@
 import javax.swing.*;
 import java.awt.*;
 
+/*
+ * Erstellt die Oberfläche des Spiels.
+ */
 public class GewinnView extends JFrame {
 
     private JLabel rundenErgebnisLabel;

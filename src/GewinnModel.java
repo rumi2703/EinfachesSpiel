@@ -1,5 +1,9 @@
 import java.util.Random;
 
+/*
+ * Speichert die Daten des Spiels und enthält die Spiellogik.
+ * Hier werden die Punkte und die Zahlen berechnet.
+ */
 public class GewinnModel {
     private int gesamtPunkte;
     private int spielerZahl;
